@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "Die aktuellste Script Version wird nun heruntergeladen."
-sudo wget http://armin.jacob.fsg-preetz.org/resethomedir.txt
+sudo wget https://raw.githubusercontent.com/nimra98/resethomedir/master/resethomedir.txt
 if [ -w resethomedir.txt ]
 then
 echo "Datei wurde erfolgreich heruntergeladen!"
