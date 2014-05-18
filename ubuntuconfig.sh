@@ -5,6 +5,8 @@ sudo wget https://raw.githubusercontent.com/nimra98/resethomedir/master/resethom
 if [ -w resethomedir.txt ]
 then
 echo "Datei wurde erfolgreich heruntergeladen!"
+sudo mv resethomedir.txt resethomedir
+wait
 read -p "Wessen Benutzerkonto soll abgesichert werden? Bitte achten sie auf die Rechtschreibung!
 " name
 read -p "Möchten sie einen abweichenden Pfad für die Sicherungen angeben? (Standard: /home/.saves/*) Falls Ja geben sie ihn bitte hier ein, ansonsten drücken sie bitte nur ENTER!
@@ -14,9 +16,8 @@ read -p "Bitte bestätigen sie, dass die Sicherung für folgenden Benutzer angel
 if [ "$confirmation1" == "Ja" ]
 then
 echo "Script wird kopiert!"
-sudo mv resethomedir.txt resethomedir
 sudo cp resethomedir /etc/init.d/
-sudo chmod 755 /etc/init.d/resethomedir
+chmod 755 /etc/init.d/resethomedir
 if [ -w /etc/init.d/resethomedir ]
 then
 echo "Die Datei wurde erfolgreich kopiert, die Rechte gesetzt und es existiert Schreibzugriff."
@@ -37,7 +38,7 @@ wait
 sudo sed -i '13aTMPDIR='$direction'' /etc/init.d/resethomedir
 fi
 echo "Das Script wurde angepasst."
-sudo insserv /etc/init.d/resethomedir
+sudo update-rc.d resethomedir defaults
 wait
 echo "Das Script wurde im Autostart verankert."
 read -p "Möchtest du jetzt eine erste Sicherung erstellen? (Ja/Nein)
