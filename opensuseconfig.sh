@@ -1,8 +1,8 @@
 #!/bin/bash
 #Dieses Script wurde von Armin Jacob unter GNU/GPLv2 veröffentlich
 echo "Die aktuellste Script Version wird nun heruntergeladen."
-sudo wget https://raw.githubusercontent.com/nimra98/resethomedir/master/resethomedir.txt
-if [ -w resethomedir.txt ]
+sudo wget https://raw.githubusercontent.com/nimra98/resethomedir/master/resethomedir
+if [ -w resethomedir ]
 then
 echo "Datei wurde erfolgreich heruntergeladen!"
 read -p "Wessen Benutzerkonto soll abgesichert werden? Bitte achten sie auf die Rechtschreibung!
@@ -14,7 +14,6 @@ read -p "Bitte bestätigen sie, dass die Sicherung für folgenden Benutzer angel
 if [ "$confirmation1" == "Ja" ]
 then
 echo "Script wird kopiert!"
-sudo mv resethomedir.txt resethomedir
 sudo cp resethomedir /etc/init.d/
 sudo chmod 755 /etc/init.d/resethomedir
 if [ -w /etc/init.d/resethomedir ]
