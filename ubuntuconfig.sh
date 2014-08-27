@@ -1,12 +1,10 @@
 #!/bin/bash
 #Dieses Script wurde von Armin Jacob unter GNU/GPLv2 veröffentlich
 echo "Die aktuellste Script Version wird nun heruntergeladen."
-sudo wget https://raw.githubusercontent.com/nimra98/resethomedir/master/resethomedir.txt
-if [ -w resethomedir.txt ]
+sudo wget https://raw.githubusercontent.com/nimra98/resethomedir/master/resethomedir
+if [ -w resethomedir ]
 then
 echo "Datei wurde erfolgreich heruntergeladen!"
-sudo mv resethomedir.txt resethomedir
-wait
 read -p "Wessen Benutzerkonto soll abgesichert werden? Bitte achten sie auf die Rechtschreibung!
 " name
 read -p "Möchten sie einen abweichenden Pfad für die Sicherungen angeben? (Standard: /home/.saves/*) Falls Ja geben sie ihn bitte hier ein, ansonsten drücken sie bitte nur ENTER!
