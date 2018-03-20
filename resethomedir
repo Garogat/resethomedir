@@ -6,7 +6,7 @@
 # Default-Start: 3 5
 # Default-Stop:
 # Description: Reset home direction of a user while booting written by Armin Jacob & Anton Bracke
-# License: This script is licensed under GNU GPL.
+# License: This script is licensed under GNU GPLv3. See attached license text in LICENSE.md
 ### END INIT INFO
  
 ### BEGIN INIT TODO ADJUST
